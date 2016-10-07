@@ -14,7 +14,7 @@ $username = $_SESSION['user'];
 	<body onload="loadEverything();">
 
      <?php
-      echo "Cookies:                          ";
+      echo "Cookies:                           ";
       ?>
 
       <script>

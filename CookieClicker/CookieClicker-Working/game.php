@@ -1,3 +1,9 @@
+Game-Projects/CookieClicker/CookieClicker-Working/game.php
+473a96c  19 days ago
+@scgregg scgregg Working CookieClicker
+1 contributor
+RawBlameHistory    
+373 lines (305 sloc)  12 KB
 <?php
 session_start();
 $username = $_SESSION['user'];
@@ -14,18 +20,15 @@ $username = $_SESSION['user'];
 	<body onload="loadEverything();">
 
      <?php
-      echo "Cookies:                           ";
+      echo "Cookies:                          ";
       ?>
 
       <script>
-
         var username = "<?php echo $username ?>";
         var number2 = 990;
         var multi = 1;
         var multia = 0;
-
         var ovensb = 0;
-
         var autos = 0;          // multiple of autoclickers
         var grannys = 0;
         var store = 0;
@@ -37,7 +40,6 @@ $username = $_SESSION['user'];
         var plant = 0;
         var ss = 0;
         var sm = 1;
-
 //===============================================================================================================
         function setCookie(cname, cvalue, exdays) {
             var d = new Date();
@@ -45,7 +47,6 @@ $username = $_SESSION['user'];
             var expires = "expires="+d.toUTCString();
             document.cookie = cname + "=" + cvalue + "; " + expires;
         }
-
         function getCookie(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
@@ -60,7 +61,6 @@ $username = $_SESSION['user'];
             }
             return "";
         }
-
         function saveEverything()
         {
             setCookie(username + ".Number",number2,730);
@@ -78,13 +78,10 @@ $username = $_SESSION['user'];
             setCookie(username + ".M",multi,730);
             setCookie(username + ".sm",sm,730);
         }
-
         function loadEverything()
         {
-
             var elem = document.getElementById("username");
                 elem.innerHTML = username;
-
             number2 = 1 * getCookie(username + ".Number");
             autos = 1 * getCookie(username + ".Autos");
             grannys = 1 * getCookie(username + ".Grannys");
@@ -101,7 +98,6 @@ $username = $_SESSION['user'];
             sm = 1 * getCookie(username + ".sm");
             updatepage();
         }
-
         function resetEverything()
         {
             number2 = 0;
@@ -120,46 +116,37 @@ $username = $_SESSION['user'];
             saveEverything();
             updatepage();
         }
-
 //===============================================================================================================
-
          function autoup(){
             number2 = number2 + autos;
             updatepage();
          }
-
          timerAutoClick = setInterval(autoup,1000);
-
          function grannyup(){
             number2 = number2 + (grannys * 2);
             updatepage();
          }
          timerAutoClick = setInterval(grannyup,1000);
-
          function storeup(){
             number2 = number2 + (store * 4);
             updatepage();
          }
          timerAutoClick = setInterval(storeup,1000);
-
          function factup(){
             number2 = number2 + (fact * 6);
             updatepage();
          }
          timerAutoClick = setInterval(factup,1000);
-
          function mallup(){
             number2 = number2 + (mall * 10 * sm);
             updatepage();
          }
          timerAutoClick = setInterval(mallup,1000);
-
          function countup(){
             number2 = number2 + (count * 15);
             updatepage();
          }
          timerAutoClick = setInterval(countup,1000);
-
          function drillup(){
             number2 = number2 + (drill * 20);
             updatepage();
@@ -177,30 +164,23 @@ $username = $_SESSION['user'];
             updatepage();
          }
          timerAutoClick = setInterval(plantup,1000);
-
          function ssup(){
             number2 = number2 + (ss * 35);
             updatepage();
          }
          timerAutoClick = setInterval(ssup,1000);
-
 //===============================================================================================================
-
           function updatepage(){
                 var elem = document.getElementById("para1");
                 elem.innerHTML = number2;
           }
-
 //===============================================================================================================
-
           function increment() {
                 number2 = (number2 + 1 * multi);
                 updatepage();
                 saveEverything();
           }
-
 //===============================================================================================================
-
           
           function increment2() {
               if (number2 >= 100 && ovensb == 0) {
@@ -211,7 +191,6 @@ $username = $_SESSION['user'];
                   saveEverything();
               }
           }
-
           function increment20() {
               if (number2 >= 100000 && sm == 1) {
                   number2 = (number2 - 100000);
@@ -219,9 +198,7 @@ $username = $_SESSION['user'];
                   saveEverything();
               }
           }
-
 //===============================================================================================================
-
           function incrementamount(amount,uppers) {
               if ( number2 >= amount ) {
                   uppers = uppers + 1;
@@ -231,15 +208,12 @@ $username = $_SESSION['user'];
               saveEverything();
               return uppers;
           }
-
 //===============================================================================================================
-
           function incrementaddamount(addmount) {
               number2 = (number2 + 1 * addmount);
               updatepage();
               saveEverything();
           }          
-
 //===============================================================================================================
       
       </script>
@@ -353,7 +327,6 @@ $username = $_SESSION['user'];
         <FORM METHOD="LINK">
         <INPUT TYPE="button" VALUE="Save" onclick="saveEverything();" />
       </FORM>
-
 -->
 
     <p id="Reseteverything"></p>

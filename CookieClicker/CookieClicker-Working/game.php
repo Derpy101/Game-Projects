@@ -1,9 +1,3 @@
-Game-Projects/CookieClicker/CookieClicker-Working/game.php
-473a96c  19 days ago
-@scgregg scgregg Working CookieClicker
-1 contributor
-RawBlameHistory    
-373 lines (305 sloc)  12 KB
 <?php
 session_start();
 $username = $_SESSION['user'];
